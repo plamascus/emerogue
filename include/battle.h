@@ -765,6 +765,7 @@ struct BattleStruct
     u8 supersweetSyrup[NUM_BATTLE_SIDES];
     u8 supremeOverlordCounter[MAX_BATTLERS_COUNT];
     u8 distortedTypeMatchups;
+    u8 boosterEnergyActivates;
 };
 
 // The palaceFlags member of struct BattleStruct contains 1 flag per move to indicate which moves the AI should consider,

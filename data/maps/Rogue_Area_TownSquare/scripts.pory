@@ -281,3 +281,45 @@ script Rogue_Area_TownSquare_TalkBallGuy
 
     release
 }
+
+script Rogue_Area_TownSquare_SwapMonBall
+{
+    lock
+    faceplayer
+
+    setvar(VAR_0x8004, 0)
+    special(BufferMonNickname)
+
+    msgbox(format("Well hey there!\pI can change the POKéBALL of {STR_VAR_1} if you'd like?"), MSGBOX_YESNO)
+
+    if(var(VAR_RESULT) == YES)
+    {
+        msgbox(format("Which type of BALL should I change it to?"))
+
+        fadescreen(FADE_TO_BLACK)
+        special(Bag_ChooseBall)
+        waitstate
+
+        
+        if(var(VAR_ITEM_ID) == 0)
+        {
+            setvar(VAR_RESULT, NO)
+        }
+        else
+        {
+            removeitem(VAR_ITEM_ID, 1)
+            special(Rogue_ChangeMonBall)
+
+            msgbox(format("And it's done!"), MSGBOX_DEFAULT)
+            setvar(VAR_RESULT, YES)
+        }
+
+    }
+
+    if(var(VAR_RESULT) == NO)
+    {
+        msgbox(format("Let me know if you change your mind!"), MSGBOX_DEFAULT)
+    }
+
+    release
+}

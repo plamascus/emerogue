@@ -2,6 +2,12 @@
 
 No actual versioning, as I am not sure if I want to do it and possibly fuck up my save in the future.
 
+10/10/2024:
+- Berry blender NPC added into the daycare and full rest stop
+- You can no longer jump off the cliff/bridge if your mon can swim while riding it.
+- Added a proper flag for the pokeball changer NPC and the conditions.
+- Unique mon tracker countdown is back
+
 8/10/2024:
 - Pokeblock can now be scattered by directly interacting on the Honey Tree
 - Press R to fly instead of B, now you can only cycle with L

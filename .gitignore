@@ -48,3 +48,4 @@ tools/ups/*
 !tools/Pokabbie/Build
 pokeemerald-*.png
 data/scripts/Rogue/Strings/command_config.json
+/scripts

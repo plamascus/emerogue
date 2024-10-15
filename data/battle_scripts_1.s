@@ -4539,7 +4539,7 @@ BattleScript_EffectConfusePoisonPuppeteer:
 	jumpifsafeguard BattleScript_SafeguardProtected
 	setmoveeffect MOVE_EFFECT_CONFUSION
 	seteffectprimary
-	resultmessage
+	printstring STRINGID_POISONPUPPETEER
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

@@ -45,7 +45,7 @@ PORYSCRIPT := tools/poryscript/poryscript-linux/poryscript$(EXE)
 endif
 
 ROGUEPORYSCRIPTSDIR := data/scripts/Rogue
-PORYSCRIPTARGS := -fc $(ROGUEPORYSCRIPTSDIR)/Strings/poryscript_font_config.json -cc $(ROGUEPORYSCRIPTSDIR)/Strings/command_config.json
+PORYSCRIPTARGS := -fc $(ROGUEPORYSCRIPTSDIR)/Strings/poryscript_font_config.json 
 
 ifeq ($(EXPANSION), 1)
 PORYSCRIPTARGS += -s ROGUE_VERSION=ROGUE_VERSION_EXPANSION

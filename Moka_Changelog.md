@@ -2,6 +2,16 @@
 
 No actual versioning, as I am not sure if I want to do it and possibly fuck up my save in the future.
 
+22/10/2024
+- Custom settings for some of my features are added, in case you'd rather keep vanilla system Currently includes the new difficulty reward system and ridemon control
+- Reward is now scaled off the multiplier if you have the new difficulty reward system on
+- Adjusted more stuff, now difficulty reward should also affect rewards you can claim. Color coded similarly to the vanilla system
+
+21/10/2024:
+- One liner issue should be fixed now
+- Minor fix to the honey tree
+- Difficulty setting is now multiplier based, it should be more modular now.
+
 10/10/2024:
 - Berry blender NPC added into the daycare and full rest stop
 - You can no longer jump off the cliff/bridge if your mon can swim while riding it.

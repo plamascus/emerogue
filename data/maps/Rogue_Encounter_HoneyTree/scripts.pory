@@ -35,8 +35,11 @@ script Rogue_Encounter_HoneyTree_ScatterPokeblock
             call(Rogue_EventScript_UsePokeblockItem)
         }
     }
-
-    release
+    else
+    {
+        release
+        end
+    }
 }
 
 script Rogue_Encounter_HoneyTree_TrainerTips

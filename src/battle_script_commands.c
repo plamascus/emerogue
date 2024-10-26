@@ -6172,6 +6172,18 @@ static void Cmd_moveend(void)
                 effect = TRUE;
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_SPREAD_MOVE_WITH_EFFECT:
+            if (IsBattlerAlive(gBattlerAttacker)
+                && gBattleMoves[gCurrentMove].target == MOVE_TARGET_BOTH
+                && gCurrentMove == MOVE_MAKE_IT_RAIN
+                && gSpecialStatuses[gBattlerAttacker].damagedMons)
+                {
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_EffectMakeItRain;
+                    effect = TRUE;
+                }
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_PICKPOCKET:
             if (IsBattlerAlive(gBattlerAttacker)
               && gBattleMons[gBattlerAttacker].item != ITEM_NONE        // Attacker must be holding an item

@@ -850,22 +850,16 @@ BattleScript_CorrosiveGasFail:
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectMakeItRain:
-	jumpifbattletype BATTLE_TYPE_DOUBLE, BattleScript_MakeItRainDoubles
-BattleScript_MakeItRainContinuous:
-	setmoveeffect MOVE_EFFECT_PAYDAY
-	call BattleScript_EffectHit_Ret
-	tryfaintmon BS_TARGET
-	setmoveeffect MOVE_EFFECT_SP_ATK_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
-	seteffectprimary
-	goto BattleScript_MoveEnd
-BattleScript_MakeItRainDoubles:
-	jumpifword CMP_NO_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT, BattleScript_NoMoveEffect
-	goto BattleScript_MakeItRainContinuous
-
 BattleScript_EffectSpinOut::
 	setmoveeffect MOVE_EFFECT_SPD_MINUS_2 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
 	goto BattleScript_EffectHit
+
+BattleScript_EffectMakeItRain::
+	setmoveeffect MOVE_EFFECT_PAYDAY
+	seteffectprimary
+	setmoveeffect MOVE_EFFECT_SP_ATK_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	seteffectprimary
+	return
 
 BattleScript_EffectAxeKick::
 	setmoveeffect MOVE_EFFECT_CONFUSION

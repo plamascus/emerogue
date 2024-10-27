@@ -1,12 +1,17 @@
 # CHANGELOG
 
+28/10/2024
+- Optimized the difficulty reward code in the menu
+- Added an indicator for pokemon spawns left for the catching contest in the pause menu
+
 27/10/2024
 - Fixed the honey tree for good. Sorry.
 - Adjusted the saveblock2. Thank you kleenex
 - Ridemon that can swim shouldn't jump off the cliff or the bridge onto the land. Seems to be an unintended behavior because I don't notice this problem on other ridemons
+- Adjusted the full rest stop map a little.
 
 23/10/2024
-- Curses bonus included in the multiplier. Each unstackable Curse adds +0.2x, while each stackable Curse adds +0.1x at 1, +0.2x at 2, and +0.25x at 3 or more
+- Curses bonus included in the multiplier. Each unstackable Curse adds +0.2x, while each stackable Curse adds +0.1x at 1, +0.2x at 2, and +0.3x at 3 or more
 
 22/10/2024
 - Custom settings for some of my features are added, in case you'd rather keep vanilla system.  Currently includes the new difficulty reward system and ridemon control

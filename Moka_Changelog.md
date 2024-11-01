@@ -1,14 +1,20 @@
 # CHANGELOG
 
+1/11/2024
+- Added quick brewing
+
 28/10/2024
 - Optimized the difficulty reward code in the menu
 - Added an indicator for pokemon spawns left for the catching contest in the pause menu
+- Added quick sell/drop toggle in bag, activated by start 
 
 27/10/2024
 - Fixed the honey tree for good. Sorry.
 - Adjusted the saveblock2. Thank you kleenex
 - Ridemon that can swim shouldn't jump off the cliff or the bridge onto the land. Seems to be an unintended behavior because I don't notice this problem on other ridemons
-- Adjusted the full rest stop map a little.
+- Adjusted the full rest stop map a little
+- Added a countdown for the catching contest
+- Added an option to show money in start menu
 
 23/10/2024
 - Curses bonus included in the multiplier. Each unstackable Curse adds +0.2x, while each stackable Curse adds +0.1x at 1, +0.2x at 2, and +0.3x at 3 or more

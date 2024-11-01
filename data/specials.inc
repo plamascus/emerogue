@@ -736,4 +736,4 @@ gSpecials::
 	def_special VsSeekerFreezeObjectsAfterChargeComplete
 	def_special Mocha_FollowMonRideCheck
 	def_special Mocha_FollowMonRide
-
+	def_special PotionBrewInput

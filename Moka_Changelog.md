@@ -2,6 +2,8 @@
 
 1/11/2024
 - Added quick brewing
+- Fixed sylveon evo
+- Merged some fixes from EggsOverEevee, such as the thermal change fix, double snowscape alolan ninetales fix, and galarian birds
 
 28/10/2024
 - Optimized the difficulty reward code in the menu

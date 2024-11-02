@@ -14764,6 +14764,8 @@ static void Cmd_pickup(void)
                     if (rand < percentTotal)
                     {
                         SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sPickupTable[j].itemId);
+                        StringCopy(gStringVar1, ItemId_GetName(sPickupTable[j].itemId));
+                        Rogue_PushPopup_MonPickUp(i);
                         break;
                     }
                 }
@@ -14777,6 +14779,8 @@ static void Cmd_pickup(void)
                 {
                     heldItem = ITEM_HONEY;
                     SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
+                    StringCopy(gStringVar1, ItemId_GetName(heldItem));
+                    Rogue_PushPopup_MonGatheredHoney(i);
                 }
             }
             #if P_SHUCKLE_BERRY_JUICE == GEN_2
@@ -14786,6 +14790,8 @@ static void Cmd_pickup(void)
             {
                 heldItem = ITEM_BERRY_JUICE;
                 SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
+                StringCopy(gStringVar1, ItemId_GetName(heldItem));
+                Rogue_PushPopup_MonProducedBerryJuice(i);
             }
             #endif
         }

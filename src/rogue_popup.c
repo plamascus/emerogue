@@ -328,6 +328,10 @@ static const u8 sText_Popup_EncounterChainEnd[] = _("{COLOR RED}{SHADOW LIGHT_RE
 static const u8 sText_Popup_PokedexUnlock[] = _("{COLOR LIGHT_GREEN}{SHADOW GREEN}Received Pokedex!");
 static const u8 sText_Popup_PokedexUpgrade[] = _("{COLOR LIGHT_GREEN}{SHADOW GREEN}Pokedex Upgraded!");
 
+static const u8 sText_Popup_PickedUp[] = _("{COLOR LIGHT_GREEN}{SHADOW GREEN}Picked Up {STR_VAR_1}!");
+static const u8 sText_Popup_GatheredHoney[] = _("{COLOR LIGHT_GREEN}{SHADOW GREEN}Gathered {STR_VAR_1}!");
+static const u8 sText_Popup_ProducedBerryJuice[] = _("{COLOR LIGHT_GREEN}{SHADOW GREEN}Produced {STR_VAR_1}!");
+
 static const u8 sText_Popup_BagUpdate[] = _("{COLOR LIGHT_GREEN}{SHADOW GREEN}Bag Upgraded!");
 static const u8 sText_Popup_UpgradeSlots[] = _("{COLOR LIGHT_BLUE}{SHADOW BLUE}+{STR_VAR_1} ({STR_VAR_2}) slots"); // assuming ITEM_BAG_SLOTS_PER_UPGRADE value
 
@@ -1343,6 +1347,52 @@ void Rogue_PushPopup_MonGenderChange(u8 slotId, u8 gender)
     popup->subtitleText = gender == MON_MALE ? sText_Popup_BecameMale : sText_Popup_BecameFemale;
     popup->titleTextCapacity = POKEMON_NAME_LENGTH;
 }
+
+void Rogue_PushPopup_MonPickUp(u8 slotId)
+{
+    struct PopupRequest* popup = CreateNewPopup();
+    u16 species = GetMonData(&gPlayerParty[slotId], MON_DATA_SPECIES);
+
+    popup->templateId = POPUP_COMMON_PARTY_INFO;
+    popup->iconId = species;
+    popup->soundEffect = 0;
+    popup->displayDuration = 60 - DEFAULT_ANIM_DURATION;
+    
+    popup->titleText = gPlayerParty[slotId].box.nickname;
+    popup->subtitleText = sText_Popup_PickedUp;
+    popup->titleTextCapacity = POKEMON_NAME_LENGTH;
+}
+
+void Rogue_PushPopup_MonGatheredHoney(u8 slotId)
+{
+    struct PopupRequest* popup = CreateNewPopup();
+    u16 species = GetMonData(&gPlayerParty[slotId], MON_DATA_SPECIES);
+
+    popup->templateId = POPUP_COMMON_PARTY_INFO;
+    popup->iconId = species;
+    popup->soundEffect = 0;
+    popup->displayDuration = 60 - DEFAULT_ANIM_DURATION;
+    
+    popup->titleText = gPlayerParty[slotId].box.nickname;
+    popup->subtitleText = sText_Popup_GatheredHoney;
+    popup->titleTextCapacity = POKEMON_NAME_LENGTH;
+}
+
+void Rogue_PushPopup_MonProducedBerryJuice(u8 slotId)
+{
+    struct PopupRequest* popup = CreateNewPopup();
+    u16 species = GetMonData(&gPlayerParty[slotId], MON_DATA_SPECIES);
+
+    popup->templateId = POPUP_COMMON_PARTY_INFO;
+    popup->iconId = species;
+    popup->soundEffect = 0;
+    popup->displayDuration = 60 - DEFAULT_ANIM_DURATION;
+    
+    popup->titleText = gPlayerParty[slotId].box.nickname;
+    popup->subtitleText = sText_Popup_ProducedBerryJuice;
+    popup->titleTextCapacity = POKEMON_NAME_LENGTH;
+}
+
 
 void Rogue_PushPopup_QuestComplete(u16 questId)
 {

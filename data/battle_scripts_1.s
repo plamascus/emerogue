@@ -4532,6 +4532,19 @@ BattleScript_EffectPoison::
 	setmoveeffect MOVE_EFFECT_POISON
 	seteffectprimary
 	resultmessage
+	jumpifability BS_ATTACKER, ABILITY_POISON_PUPPETEER, BattleScript_EffectConfusePoisonPuppeteer
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectConfusePoisonPuppeteer:
+	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_OwnTempoPrevents
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	jumpifstatus2 BS_TARGET, STATUS2_CONFUSION, BattleScript_AlreadyConfused
+	jumpifterrainaffected BS_TARGET, STATUS_FIELD_MISTY_TERRAIN, BattleScript_MistyTerrainPrevents
+	jumpifsafeguard BattleScript_SafeguardProtected
+	setmoveeffect MOVE_EFFECT_CONFUSION
+	seteffectprimary
+	resultmessage
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -4547,6 +4560,7 @@ BattleScript_EffectParalyze:
 	jumpifshieldsdown BS_TARGET, BattleScript_AbilityProtectsDoesntAffect
 	jumpifsubstituteblocks BattleScript_ButItFailed
 	typecalc
+
 BattleScript_BattleScript_EffectParalyzeNoTypeCalc:
 	jumpifmovehadnoeffect BattleScript_ButItFailed
 	jumpifstatus BS_TARGET, STATUS1_PARALYSIS, BattleScript_AlreadyParalyzed

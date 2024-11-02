@@ -5104,7 +5104,7 @@ u8 Rogue_SelectRouteRoom(u8 difficulty)
     {
         u16 i;
         
-        for(i = 0; i < gRogueRouteTable.routeCount; ++i)
+        for(i = 0; i < gRogueRouteTable.routeCount - 1; ++i) //To remove quickmap from default run
         {
             RogueMiscQuery_EditElement(QUERY_FUNC_INCLUDE, i);
         }

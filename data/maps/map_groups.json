@@ -120,7 +120,8 @@
     "Rogue_Route_Sinnoh_214",
     "Rogue_Route_Sinnoh_209",
     "Rogue_Route_Sinnoh_MtCoronet",
-    "Rogue_Route_Sinnoh_IronIsland"
+    "Rogue_Route_Sinnoh_IronIsland",
+    "Rogue_Route_QuickMap"
   ],
   "gMapGroup_RogueAdventureEncounters": [
     "Rogue_Encounter_RestStop",

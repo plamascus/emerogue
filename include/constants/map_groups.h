@@ -116,6 +116,7 @@
 #define MAP_ROGUE_ROUTE_SINNOH_209           (36 | (6 << 8))
 #define MAP_ROGUE_ROUTE_SINNOH_MT_CORONET    (37 | (6 << 8))
 #define MAP_ROGUE_ROUTE_SINNOH_IRON_ISLAND   (38 | (6 << 8))
+#define MAP_ROGUE_ROUTE_QUICK_MAP            (39 | (6 << 8))
 
 // gMapGroup_RogueAdventureEncounters
 #define MAP_ROGUE_ENCOUNTER_REST_STOP        (0 | (7 << 8))

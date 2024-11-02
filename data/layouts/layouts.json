@@ -2130,6 +2130,16 @@
       "secondary_tileset": "gTileset_CaveAlt",
       "border_filepath": "data/layouts/Rogue_Route_Sinnoh_IronIsland/border.bin",
       "blockdata_filepath": "data/layouts/Rogue_Route_Sinnoh_IronIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROGUE_ROUTE_QUICK_MAP",
+      "name": "Rogue_Route_QuickMap_Layout",
+      "width": 25,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Rogue_Route_QuickMap/border.bin",
+      "blockdata_filepath": "data/layouts/Rogue_Route_QuickMap/map.bin"
     }
   ]
 }

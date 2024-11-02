@@ -237,6 +237,15 @@ static const struct RogueRouteEncounter sRogueRouteTable[] = {
         .dropRarity = 2,
         .wildTypeTable = { TYPE_STEEL, TYPE_ELECTRIC, TYPE_FIRE }
     },
+    {
+        .mapFlags = ROUTE_FLAG_HOENN,
+        .map = ROUTE_MAP(ROGUE_ROUTE_QUICK_MAP),
+#ifdef ROGUE_EXPANSION
+        .wildTypeTable = { TYPE_FAIRY, TYPE_GHOST, TYPE_WATER },
+#else
+        .wildTypeTable = { TYPE_GHOST, TYPE_ELECTRIC, TYPE_NORMAL },
+#endif
+    },
 };
 
 const struct RogueRouteData gRogueRouteTable = 

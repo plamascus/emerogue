@@ -1670,7 +1670,7 @@
 #define SPECIES_TERAPAGOS_STELLAR                       GEN9_START + 145
 #define SPECIES_PECHARUNT                               GEN9_START + 146
 
-#define PLACEHOLDER_START                               SPECIES_PECHARUNT
+#define PLACEHOLDER_START                               SPECIES_PECHARUNT + 1
 // XD: Gale of Darkness
 #define SPECIES_LUGIA_SHADOW                            PLACEHOLDER_START + 1
 // Diamond & Pearl

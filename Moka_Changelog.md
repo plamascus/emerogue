@@ -1,5 +1,9 @@
 # CHANGELOG
 
+4/11/2024 
+- Merged yet another poison puppeteer stuff + mortal spin (kinda? I can't find it on eevee's repo)
+- Buffed the reward for the multiplier
+
 3/11/2024
 - Merged eevee's poison puppeteer related things + minor fixes
 - Added quick route option for... Quicker routes. Since making a shorter run isn't an option due to how the game expects you to defeat 14 mighty trainers, rip. It doesn't affect existing generated map however, and instead will be enforced on the next map generation

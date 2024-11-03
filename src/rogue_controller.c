@@ -5066,10 +5066,37 @@ static u8 SelectRouteRoom_CalculateWeight(u16 index, u16 routeId, void* data, bo
     u16 currentSeed = difficulty % roomDelay;
     u16 roomSeed = (gRogueRun.baseSeed * 2135 ^ (13890 * routeId)) % roomDelay;
 
-    if(HistoryBufferContains(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), routeId))
+    if(HistoryBufferContains(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), routeId) && gSaveBlock2Ptr->optionsQuickRoute == OPTIONS_QUICKROUTE_OFF) // Keep normal behavior is said setting is off
     {
         // Don't repeat routes on same screen
         return 0;
+    }
+    
+    // Quick route only
+    // TODO(?) check if a type is already used perhaps? Not a thing here apparently since it only deals with whether the route is used or not
+    // Basegame already has duplicated types anyway. It's only more noticeable here due to the fact that we're limited with 6 maps
+    else if (HistoryBufferContains(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), routeId))
+    {
+         u8 quickRoutesUsedCount = 0;
+
+        for (u8 i = gRogueRouteTable.routeCount - 6; i < gRogueRouteTable.routeCount; ++i)
+        {
+            if (HistoryBufferContains(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), i))
+            {
+                quickRoutesUsedCount++;
+            }
+        }
+
+        // If all 6 quick routes are in use, allow reuse by returning 255
+        if (quickRoutesUsedCount >= 6)
+        {
+            return 255;
+        }
+        else
+        {
+            // If there are still unused quick routes, avoid repeating
+            return 0;
+        }
     }
 
     if(applyDelaySeeds)
@@ -5103,10 +5130,21 @@ u8 Rogue_SelectRouteRoom(u8 difficulty)
     RogueCustomQuery_Begin();
     {
         u16 i;
-        
-        for(i = 0; i < gRogueRouteTable.routeCount - 1; ++i) //To remove quickmap from default run
+
+        if (gSaveBlock2Ptr->optionsQuickRoute == OPTIONS_QUICKROUTE_ON)
         {
-            RogueMiscQuery_EditElement(QUERY_FUNC_INCLUDE, i);
+            for(i = gRogueRouteTable.routeCount - 6; i < gRogueRouteTable.routeCount; ++i) // To exclusively use quickmap
+            {
+                RogueMiscQuery_EditElement(QUERY_FUNC_INCLUDE, i);
+            }
+        }
+
+        else
+        {
+            for(i = 0; i < gRogueRouteTable.routeCount - 6; ++i) // To remove quickmap from default run
+            {
+                RogueMiscQuery_EditElement(QUERY_FUNC_INCLUDE, i);
+            }
         }
 
         RogueWeightQuery_Begin();

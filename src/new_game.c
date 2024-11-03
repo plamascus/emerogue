@@ -108,6 +108,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsDifficultyRewardMode = OPTIONS_DIFFICULTY_REWARD_MODE_VANILLA;
     gSaveBlock2Ptr->optionsRidemonControlMode = OPTIONS_RIDEMON_CONTROL_VANILLA;
     gSaveBlock2Ptr->optionsShowMoney = OPTIONS_SHOWMONEY_OFF;
+    gSaveBlock2Ptr->optionsQuickRoute = OPTIONS_QUICKROUTE_OFF;
     gSaveBlock2Ptr->timeOfDayVisuals = TRUE;
     gSaveBlock2Ptr->seasonVisuals = TRUE;
     gSaveBlock2Ptr->weatherVisuals = TRUE;

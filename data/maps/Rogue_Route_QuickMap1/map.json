@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROGUE_ROUTE_QUICK_MAP",
-  "name": "Rogue_Route_QuickMap",
-  "layout": "LAYOUT_ROGUE_ROUTE_QUICK_MAP",
+  "id": "MAP_ROGUE_ROUTE_QUICK_MAP1",
+  "name": "Rogue_Route_QuickMap1",
+  "layout": "LAYOUT_ROGUE_ROUTE_QUICK_MAP1",
   "music": "MUS_ROUTE104",
   "region_map_section": "MAPSEC_ADVENTURE",
   "requires_flash": false,
@@ -514,14 +514,14 @@
       "x": 12,
       "y": 31,
       "elevation": 0,
-      "dest_map": "MAP_ROGUE_ROUTE_QUICK_MAP",
+      "dest_map": "MAP_ROGUE_ROUTE_QUICK_MAP1",
       "dest_warp_id": "0"
     },
     {
       "x": 12,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_ROGUE_ROUTE_QUICK_MAP",
+      "dest_map": "MAP_ROGUE_ROUTE_QUICK_MAP1",
       "dest_warp_id": "0"
     }
   ],

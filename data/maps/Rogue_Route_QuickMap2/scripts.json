@@ -1,4 +1,4 @@
-mapscripts Rogue_Route_QuickMap_MapScripts 
+mapscripts Rogue_Route_QuickMap2_MapScripts 
 {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
     [

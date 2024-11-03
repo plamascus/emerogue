@@ -1,5 +1,16 @@
 # CHANGELOG
 
+3/11/2024
+- Merged eevee's poison puppeteer related things + minor fixes
+- Added quick route option for... Quicker routes. Since making a shorter run isn't an option due to how the game expects you to defeat 14 mighty trainers, rip. It doesn't affect existing generated map however, and instead will be enforced on the next map generation
+- Fixed venipede's funny overworld look
+
+2/11/2024
+- Fixed weird berrytag ui behavior
+- Added popups for Pick Up, Honey Gatherer, and Shuckle's berry juice
+- Added a new route, quick map, for debugging purposes
+- Fixed the conditional, pecharunt should be able to spawn now
+
 1/11/2024
 - Added quick brewing
 - Fixed sylveon evo

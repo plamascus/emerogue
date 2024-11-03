@@ -194,6 +194,9 @@
 #define OPTIONS_SHOWMONEY_OFF 0
 #define OPTIONS_SHOWMONEY_ON 1
 
+#define OPTIONS_QUICKROUTE_OFF 0
+#define OPTIONS_QUICKROUTE_ON  1
+
 // Mocha additions end
 
 #define DIR_NONE        0

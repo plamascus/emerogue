@@ -2132,14 +2132,64 @@
       "blockdata_filepath": "data/layouts/Rogue_Route_Sinnoh_IronIsland/map.bin"
     },
     {
-      "id": "LAYOUT_ROGUE_ROUTE_QUICK_MAP",
-      "name": "Rogue_Route_QuickMap_Layout",
+      "id": "LAYOUT_ROGUE_ROUTE_QUICK_MAP0",
+      "name": "Rogue_Route_QuickMap0_Layout",
       "width": 25,
       "height": 35,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/Rogue_Route_QuickMap/border.bin",
-      "blockdata_filepath": "data/layouts/Rogue_Route_QuickMap/map.bin"
+      "border_filepath": "data/layouts/Rogue_Route_QuickMap0/border.bin",
+      "blockdata_filepath": "data/layouts/Rogue_Route_QuickMap0/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROGUE_ROUTE_QUICK_MAP1",
+      "name": "Rogue_Route_QuickMap1_Layout",
+      "width": 25,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Rogue_Route_QuickMap1/border.bin",
+      "blockdata_filepath": "data/layouts/Rogue_Route_QuickMap1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROGUE_ROUTE_QUICK_MAP2",
+      "name": "Rogue_Route_QuickMap2_Layout",
+      "width": 25,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Rogue_Route_QuickMap2/border.bin",
+      "blockdata_filepath": "data/layouts/Rogue_Route_QuickMap2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROGUE_ROUTE_QUICK_MAP3",
+      "name": "Rogue_Route_QuickMap3_Layout",
+      "width": 25,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Rogue_Route_QuickMap3/border.bin",
+      "blockdata_filepath": "data/layouts/Rogue_Route_QuickMap3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROGUE_ROUTE_QUICK_MAP4",
+      "name": "Rogue_Route_QuickMap4_Layout",
+      "width": 25,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Rogue_Route_QuickMap4/border.bin",
+      "blockdata_filepath": "data/layouts/Rogue_Route_QuickMap4/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROGUE_ROUTE_QUICK_MAP5",
+      "name": "Rogue_Route_QuickMap5_Layout",
+      "width": 25,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Rogue_Route_QuickMap5/border.bin",
+      "blockdata_filepath": "data/layouts/Rogue_Route_QuickMap5/map.bin"
     }
   ]
 }

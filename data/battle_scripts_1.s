@@ -822,7 +822,7 @@ BattleScript_EffectMortalSpin:
 	call BattleScript_EffectHit_Ret
 	rapidspinfree
 	setmoveeffect MOVE_EFFECT_POISON
-	seteffectwithchance
+	seteffectprimary
 	tryfaintmon BS_TARGET
 	moveendall
 	end
@@ -4178,6 +4178,7 @@ BattleScript_EffectToxic::
 	setmoveeffect MOVE_EFFECT_TOXIC
 	seteffectprimary
 	resultmessage
+	jumpifability BS_ATTACKER, ABILITY_POISON_PUPPETEER, BattleScript_EffectConfusePoisonPuppeteer
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

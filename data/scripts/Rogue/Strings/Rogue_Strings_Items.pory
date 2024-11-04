@@ -68,6 +68,11 @@ text gItemDesc_GoldenSeed
     format("todo - golden seed")
 }
 
+text gItemDesc_PocketPC
+{
+    format("A gadget which can remotely access the PC.")
+}
+
 text gItemDesc_NormalPokeblock
 {
     format("Can be used on Routes to attract Normal type {PKMN}.")

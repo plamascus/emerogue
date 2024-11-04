@@ -654,6 +654,22 @@ script Rogue_EventScript_UseGoldenSeedItem
     release
 }
 
+script Rogue_EventScript_UsePocketPC
+{
+    lock
+
+    if(flag(FLAG_ROGUE_RUN_ACTIVE) == FALSE)
+    {
+        goto(EventScript_PC)
+    }
+    else
+    {
+        msgbox(format("It has have no effect, inside of Adventures."))
+    }
+
+    release
+}
+
 script Rogue_EventScript_AttemptSnagBattle
 {
     lock

@@ -548,6 +548,7 @@ extern const u8 Rogue_EventScript_ItemUseHealingFlask[];
 extern const u8 Rogue_EventScript_UsePokeblockItem[];
 extern const u8 Rogue_EventScript_UseDayCarePhoneItem[];
 extern const u8 Rogue_EventScript_UseGoldenSeedItem[];
+extern const u8 Rogue_EventScript_UsePocketPC[];
 
 extern const u8 EventScript_SelectWithoutRegisteredItem[];
 

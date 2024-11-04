@@ -895,6 +895,19 @@ void ItemUseOutOfBattle_GoldenSeed(u8 taskId)
     SetUpItemUseOnFieldCallback(taskId);
 }
 
+static void ItemUseOnFieldCB_PocketPC(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(Rogue_EventScript_UsePocketPC);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_PocketPC(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_PocketPC;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
 void ItemUseOutOfBattle_CoinCase(u8 taskId)
 {
     ConvertIntToDecimalStringN(gStringVar1, GetCoins(), STR_CONV_MODE_LEFT_ALIGN, 4);

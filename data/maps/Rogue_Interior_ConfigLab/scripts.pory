@@ -1,6 +1,9 @@
 const FLAG_CAN_GIVE_C_GEAR = FLAG_TEMP_10
+const FLAG_CAN_GIVE_POCKET_PC = FLAG_TEMP_11
 
 const VAR_TRIGGER_POKABBIE_MEET = VAR_TEMP_0
+
+const VAR_GIVE_ITEM = VAR_TEMP_1
 
 // Reused vars
 const VAR_SHAKE_VERTICAL_PAN = VAR_0x8004
@@ -30,6 +33,16 @@ script Rogue_Interior_ConfigLab_OnLoad
     else
     {
         clearflag(FLAG_CAN_GIVE_C_GEAR)
+    }
+
+    hubupgradeunlocked(HUB_UPGRADE_LAB_POCKET_PC)
+    if(var(VAR_RESULT) == TRUE)
+    {
+        clearflag(FLAG_CAN_GIVE_POCKET_PC)
+    }
+    else
+    {
+        setflag(FLAG_CAN_GIVE_POCKET_PC)
     }
 
     if(!flag(FLAG_ROGUE_MET_POKABBIE))
@@ -97,6 +110,7 @@ script Rogue_Interior_ConfigLab_TalkFennel
     }
     else
     {
+        setvar(VAR_GIVE_ITEM, FALSE)
         checkitem(ITEM_C_GEAR)
 
         if(var(VAR_RESULT) == FALSE && flag(FLAG_CAN_GIVE_C_GEAR))
@@ -104,11 +118,27 @@ script Rogue_Interior_ConfigLab_TalkFennel
             msgbox(format("Just the Trainer I wanted to see!\pI have something for you!"), MSGBOX_DEFAULT)
 
             giveitem(ITEM_C_GEAR)
+            setvar(VAR_GIVE_ITEM, TRUE)
 
             bufferitemname(STR_VAR_1, ITEM_C_GEAR)
             msgbox(format("I repurposed that {STR_VAR_1} so you can view and edit Config Lab settings remotely!\pYou can even use it whilst you're Adventuring to double check your settings!\pNow…\nDid you want to adjust your Adventure settings?"), MSGBOX_DEFAULT)
         }
-        else
+
+        checkitem(ITEM_POCKET_PC)
+
+        if(var(VAR_RESULT) == FALSE && flag(FLAG_CAN_GIVE_POCKET_PC) && var(VAR_GIVE_ITEM) == FALSE) // So that it wont show up after the c-gear check
+        {
+            msgbox(format("Just the Trainer I wanted to see!\pI have something for you!"), MSGBOX_DEFAULT)
+            
+            giveitem(ITEM_POCKET_PC)
+            setvar(VAR_GIVE_ITEM, TRUE)
+
+            bufferitemname(STR_VAR_1, ITEM_POCKET_PC)
+            msgbox(format("This {STR_VAR_1} lets you access your Pokémon storage and organize your team from here in the hub!\pIt won't work during Adventures just yet, but it should make your hub preparations much smoother!\pNow…\nDid you want to adjust your Adventure settings?"), MSGBOX_DEFAULT)
+        }  
+    
+
+        if(!var(VAR_GIVE_ITEM))
         {
             msgbox(format("Did you want to adjust your Adventure settings?"), MSGBOX_DEFAULT)
         }

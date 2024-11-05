@@ -478,6 +478,10 @@ text gHubUpgradeDesc_Lab_UniqueMonRarity3
     format("Allows Legendary Unique {PKMN} to be tracked.")
 }
 
+text gHubUpgradeDesc_Lab_PocketPC
+{
+    format("Remotely access PC. Hub only.")
+}
 
 text gHubUpgradeDesc_AdventureEntrance_RandomStarter
 {

@@ -80,7 +80,9 @@
 #define HUB_UPGRADE_MARKET_TREAT_SHOP_STOCK             (HUB_UPGRADE_FIRST + 43)
 #define HUB_UPGRADE_MARKET_BANK                         (HUB_UPGRADE_FIRST + 44)
 
-#define HUB_UPGRADE_COUNT                               (HUB_UPGRADE_MARKET_BANK + 1)
+#define HUB_UPGRADE_LAB_POCKET_PC                       (HUB_UPGRADE_FIRST + 45)
+
+#define HUB_UPGRADE_COUNT                               (HUB_UPGRADE_LAB_POCKET_PC + 1)
 
 // NOTE - Once the next update is out ALWAYS add the upgrades at the bottom of this list
 

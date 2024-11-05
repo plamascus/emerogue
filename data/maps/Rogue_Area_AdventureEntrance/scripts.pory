@@ -291,6 +291,20 @@ script Rogue_Area_AdventureEntrance_SpeakNurse
                 }
             }
 
+            hubupgradeunlocked(HUB_UPGRADE_LAB_POCKET_PC)
+            if(var(VAR_RESULT) == TRUE)
+            {
+                checkitem(ITEM_POCKET_PC)
+
+                if(var(VAR_RESULT) == FALSE)
+                {
+                    msgbox(format("{PLAYER}!\pI have a package I was asked to hand to you."))
+                    msgbox(format("Oh?\nThere's a small package here with a note from Professor Fennel.\pIt reads…\p'Dear {PLAYER},\nI'm thrilled to present you with the Pocket PC!\pThis device lets you access your Pokémon storage from the hub - a little boost to keep things organized.\pDue to the complexity of Adventures, it won't work out in the field for now (it's still quite the mystery to us!), but I hope it helps you prep!\pBest of luck!\p - Fennel'"))
+                    giveitem(ITEM_POCKET_PC)
+                    call(Rogue_Common_DisplayPopups)
+                }
+            }
+
             special(Rogue_HasPendingQuestRewards)
             if(var(VAR_RESULT) == YES)
             {

@@ -25,6 +25,7 @@ extern const u8 gHubUpgradeDesc_Lab_UniqueMonRarity0[];
 extern const u8 gHubUpgradeDesc_Lab_UniqueMonRarity1[];
 extern const u8 gHubUpgradeDesc_Lab_UniqueMonRarity2[];
 extern const u8 gHubUpgradeDesc_Lab_UniqueMonRarity3[];
+extern const u8 gHubUpgradeDesc_Lab_PocketPC[];
 extern const u8 gHubUpgradeDesc_AdventureEntrance_RandomStarter[];
 extern const u8 gHubUpgradeDesc_AdventureEntrance_AdventureReplay[];
 extern const u8 gHubUpgradeDesc_BerryField_Brewing[];
@@ -53,6 +54,7 @@ extern const u8 gHubUpgradeDesc_DayCare_TeaShop[];
 extern const u8 gHubUpgradeDesc_DayCare_ExpShare0[];
 extern const u8 gHubUpgradeDesc_DayCare_ExpShare1[];
 extern const u8 gHubUpgradeDesc_DayCare_ExpShare2[];
+
 
 
 #define SET_UPDATE_AREA(area) \
@@ -693,4 +695,14 @@ const struct RogueAreaUpgrade gRogueHubUpgrades[HUB_UPGRADE_COUNT] =
         .descText = gHubUpgradeDesc_Mart_Bank,
         .requiredUpgrades = { HUB_UPGRADE_NONE }
     },
+
+    [HUB_UPGRADE_LAB_POCKET_PC] =
+    {
+        .upgradeName = _("Pocket PC"),
+        .targetArea = HUB_AREA_LABS,
+        .buildCost = 5,
+        .descText = gHubUpgradeDesc_Lab_PocketPC,
+        .requiredUpgrades = { HUB_UPGRADE_NONE },
+    },
+
 };

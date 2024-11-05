@@ -26,6 +26,7 @@ extern const u8 gHubUpgradeDesc_Lab_UniqueMonRarity1[];
 extern const u8 gHubUpgradeDesc_Lab_UniqueMonRarity2[];
 extern const u8 gHubUpgradeDesc_Lab_UniqueMonRarity3[];
 extern const u8 gHubUpgradeDesc_Lab_PocketPC[];
+extern const u8 gHubUpgradeDesc_Lab_PocketPCTracker[];
 extern const u8 gHubUpgradeDesc_AdventureEntrance_RandomStarter[];
 extern const u8 gHubUpgradeDesc_AdventureEntrance_AdventureReplay[];
 extern const u8 gHubUpgradeDesc_BerryField_Brewing[];
@@ -703,6 +704,15 @@ const struct RogueAreaUpgrade gRogueHubUpgrades[HUB_UPGRADE_COUNT] =
         .buildCost = 5,
         .descText = gHubUpgradeDesc_Lab_PocketPC,
         .requiredUpgrades = { HUB_UPGRADE_NONE },
+    },
+
+    [HUB_UPGRADE_LAB_POCKET_PC_TRACKER] =
+    {
+        .upgradeName = _("Pocket PC+"),
+        .targetArea = HUB_AREA_LABS,
+        .buildCost = 7,
+        .descText = gHubUpgradeDesc_Lab_PocketPCTracker,
+        .requiredUpgrades = { HUB_UPGRADE_LAB_POCKET_PC, HUB_UPGRADE_LAB_UNIQUE_MON_LAB },
     },
 
 };

@@ -38,11 +38,11 @@ script Rogue_Interior_ConfigLab_OnLoad
     hubupgradeunlocked(HUB_UPGRADE_LAB_POCKET_PC)
     if(var(VAR_RESULT) == TRUE)
     {
-        clearflag(FLAG_CAN_GIVE_POCKET_PC)
+        setflag(FLAG_CAN_GIVE_POCKET_PC)
     }
     else
     {
-        setflag(FLAG_CAN_GIVE_POCKET_PC)
+        clearflag(FLAG_CAN_GIVE_POCKET_PC)
     }
 
     if(!flag(FLAG_ROGUE_MET_POKABBIE))
@@ -121,7 +121,22 @@ script Rogue_Interior_ConfigLab_TalkFennel
             setvar(VAR_GIVE_ITEM, TRUE)
 
             bufferitemname(STR_VAR_1, ITEM_C_GEAR)
-            msgbox(format("I repurposed that {STR_VAR_1} so you can view and edit Config Lab settings remotely!\pYou can even use it whilst you're Adventuring to double check your settings!\pNow…\nDid you want to adjust your Adventure settings?"), MSGBOX_DEFAULT)
+            msgbox(format("I repurposed that {STR_VAR_1} so you can view and edit Config Lab settings remotely!\pYou can even use it whilst you're Adventuring to double check your settings!"), MSGBOX_DEFAULT)
+
+            //I think it'd be neat if you can claim 2 things at once instead of reentering the room to claim the other
+            checkitem(ITEM_POCKET_PC)
+            if(var(VAR_RESULT) == FALSE && flag(FLAG_CAN_GIVE_POCKET_PC))
+            {
+                msgbox(format("Oh, I have something else for you!"))
+
+                giveitem(ITEM_POCKET_PC)
+
+                bufferitemname(STR_VAR_1, ITEM_POCKET_PC)
+                msgbox(format("This {STR_VAR_1} lets you access your Pokémon storage and organize your team from here in the hub!\pIt won't work during Adventures just yet, but it should make your hub preparations much smoother!"), MSGBOX_DEFAULT)
+            }
+            
+            msgbox(format("Now…\nDid you want to adjust your Adventure settings?"))
+
         }
 
         checkitem(ITEM_POCKET_PC)

@@ -2,6 +2,7 @@
 
 5/11/2024
 - Added the pocket PC for real this time. Unlocked via hub upgrade
+- Added unique mon tracking inside pocket pc as an upgrade. Can be used inside adventure
 
 4/11/2024 
 - Merged yet another poison puppeteer stuff + mortal spin (kinda? I can't find it on eevee's repo)

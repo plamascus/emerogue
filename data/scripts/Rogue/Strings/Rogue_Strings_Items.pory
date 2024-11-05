@@ -480,7 +480,12 @@ text gHubUpgradeDesc_Lab_UniqueMonRarity3
 
 text gHubUpgradeDesc_Lab_PocketPC
 {
-    format("Remotely access PC. Hub only.")
+    format("Remotely access the PC (Hub only)")
+}
+
+text gHubUpgradeDesc_Lab_PocketPCTracker
+{
+    format("Allows tracking of unique {PKMN} via Pocket PC. Available both in and out of Adventures.")
 }
 
 text gHubUpgradeDesc_AdventureEntrance_RandomStarter

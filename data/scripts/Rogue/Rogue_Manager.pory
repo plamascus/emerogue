@@ -660,11 +660,20 @@ script Rogue_EventScript_UsePocketPC
 
     if(flag(FLAG_ROGUE_RUN_ACTIVE) == FALSE)
     {
-        goto(EventScript_PC)
+        setflag(FLAG_POCKET_PC_IS_USED)//So we know if we're using it or not. Tracker is exclusive to pocket PC
+        call(EventScript_PC)
     }
     else
     {
-        msgbox(format("It has have no effect, inside of Adventures."))
+        hubupgradeunlocked(HUB_UPGRADE_LAB_POCKET_PC_TRACKER)
+        if(var(VAR_RESULT) == TRUE)
+        {
+            call(Rogue_Interior_BillsLab_TalkPC)
+        }
+        else
+        {
+            msgbox(format("The Pocket PC's storage system can't be accessed during adventures."), MSGBOX_DEFAULT)
+        }
     }
 
     release

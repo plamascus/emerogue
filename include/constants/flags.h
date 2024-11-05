@@ -695,7 +695,7 @@
 #define FLAG_ROGUE_TRAINERS_STRONG_LEGENDARIES  0x282
 #define FLAG_ROGUE_PRE_RELEASE_COMPAT_WARNING   0x283
 #define FLAG_ROGUE_REWARD_ITEM_MART_DISABLED    0x284
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
+#define FLAG_POCKET_PC_IS_USED                     0x285
 #define FLAG_UNUSED_0x286  0x286 // Unused Flag
 #define FLAG_UNUSED_0x287  0x287 // Unused Flag
 #define FLAG_UNUSED_0x288  0x288 // Unused Flag

@@ -905,6 +905,7 @@ const u8 gText_LanettesPC[] = _("LANETTE'S PC");
 const u8 gText_PlayersPC[] = _("{PLAYER}'s PC");
 const u8 gText_HallOfFame[] = _("Hall of Fame");
 const u8 gText_LogOff[] = _("Log Off");
+const u8 gText_UniqueMonTracker[] = _("Unique Tracker");
 const u8 gText_Opponent[] = _("OPPONENT");
 const u8 gText_Tourney_Tree[] = _("TOURNEY TREE");
 const u8 gText_ReadyToStart[] = _("READY TO START");

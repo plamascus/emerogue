@@ -790,6 +790,7 @@ const u8 gText_SwapOne[] = _("Trade One");
 const u8 gText_SwapAll[] = _("Trade All");
 const u8 gText_ExpandArea[] = _("Expand Town");
 const u8 gText_UpgradeArea[] = _("Upgrade");
+const u8 gText_RenameHub[] = _("Rename Hub");
 const u8 gText_South[] = _("South");
 const u8 gText_North[] = _("North");
 const u8 gText_East[] = _("East");

@@ -22,6 +22,7 @@
 #include "menu.h"
 #include "menu_helpers.h"
 #include "money.h"
+#include "naming_screen.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -59,6 +60,7 @@ typedef void (*ShopCallback)();
 
 enum {
     WIN_BUY_SELL_QUIT,
+    WIN_BUY_SELL_RENAME_QUIT,
     WIN_BUY_QUIT,
 };
 
@@ -192,6 +194,8 @@ static bool8 IsZeroPriceMarkedAsFree();
 static u32 GetShopCurrencyAmount();
 static void RemoveShopCurrencyAmount(u32 amount);
 
+static void Task_RenameHub(u8 taskId);
+
 static const struct YesNoFuncTable sShopPurchaseYesNoFuncs =
 {
     BuyMenuTryMakePurchase,
@@ -215,6 +219,7 @@ static const struct MenuAction sShopMenuActions_BuildQuit[] =
 {
     { gText_ShopUpgrade, {.void_u8=Task_HandleShopMenuUpgrades} },
     { gText_ShopAreas, {.void_u8=Task_HandleShopMenuAreas} },
+    { gText_RenameHub, {.void_u8=Task_RenameHub} },
     { gText_ShopQuit, {.void_u8=Task_HandleShopMenuQuit} }
 };
 
@@ -227,6 +232,16 @@ static const struct WindowTemplate sShopMenuWindowTemplates[] =
         .tilemapTop = 1,
         .width = 9,
         .height = 6,
+        .paletteNum = 15,
+        .baseBlock = 0x0008,
+    },
+    //To include hub rename
+    [WIN_BUY_SELL_RENAME_QUIT] = {
+        .bg = 0,
+        .tilemapLeft = 2,
+        .tilemapTop = 1,
+        .width = 9,
+        .height = 8,
         .paletteNum = 15,
         .baseBlock = 0x0008,
     },
@@ -399,7 +414,7 @@ static u8 CreateShopMenu(u8 martType)
     else if (martType == MART_TYPE_HUB_AREAS || martType == MART_TYPE_HUB_UPGRADES)
     {
         struct WindowTemplate winTemplate;
-        winTemplate = sShopMenuWindowTemplates[0];
+        winTemplate = sShopMenuWindowTemplates[WIN_BUY_SELL_RENAME_QUIT];
         winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuildQuit, ARRAY_COUNT(sShopMenuActions_BuildQuit));
         sMartInfo.windowId = AddWindow(&winTemplate);
         sMartInfo.menuActions = sShopMenuActions_BuildQuit;
@@ -518,6 +533,16 @@ static void Task_HandleShopMenuAreas(u8 taskId)
 {
     sMartInfo.martType = MART_TYPE_HUB_AREAS;
     gTasks[taskId].func = Task_HandleShopMenuBuy;
+}
+
+static void Task_RenameHub(u8 taskId)
+{
+    DoNamingScreen(NAMING_SCREEN_POKEMON_HUB, gSaveBlock2Ptr->pokemonHubName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+static void ReturnToShopMenuFromNamingScreen(u8 taskId)
+{
+    CreateTask(Task_ReturnToShopMenu, taskId);
 }
 
 void CB2_ExitSellMenu(void)

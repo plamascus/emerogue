@@ -1259,6 +1259,7 @@ extern const u8 gText_SwapOne[];
 extern const u8 gText_SwapAll[];
 extern const u8 gText_ExpandArea[];
 extern const u8 gText_UpgradeArea[];
+extern const u8 gText_RenameHub[];
 extern const u8 gText_South[];
 extern const u8 gText_North[];
 extern const u8 gText_East[];

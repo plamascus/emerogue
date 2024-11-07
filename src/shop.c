@@ -540,11 +540,6 @@ static void Task_RenameHub(u8 taskId)
     DoNamingScreen(NAMING_SCREEN_POKEMON_HUB, gSaveBlock2Ptr->pokemonHubName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
-static void ReturnToShopMenuFromNamingScreen(u8 taskId)
-{
-    CreateTask(Task_ReturnToShopMenu, taskId);
-}
-
 void CB2_ExitSellMenu(void)
 {
     gFieldCallback = MapPostLoadHook_ReturnToShopMenu;

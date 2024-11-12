@@ -3361,6 +3361,9 @@ $(OBJEVENTGFXDIR)/pokemon_ow/corsola_galarian.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokemon_ow/gimmighoul_chest.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/pokemon_ow/gimmighoul_roaming.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/pokemon_ow/cursola.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 

@@ -2655,7 +2655,7 @@ static const u8 sPhotonGeyserDescription[] = _(
 static const u8 sZippyZapDescription[] = _(
     "Electric bursts always go\n"
 #if B_UPDATED_MOVE_DATA >= GEN_8
-    "first and raises evasiveness.");
+    "first and raises evasion.");
 #else
     "first and land a critical hit.");
 #endif
@@ -3250,19 +3250,24 @@ static const u8 sAquaCutterDescription[] = _(
     "high critical-hit ratio.");
 
 static const u8 sBlazingTorqueDescription[] = _(
-    "---");
+    "Spinning attack that may\n"
+    "inflict a burn.");
 
 static const u8 sWickedTorqueDescription[] = _(
-    "---");
+    "Spinning attack that may\n"
+    "induce sleep.");
 
 static const u8 sNoxiousTorqueDescription[] = _(
-    "---");
+    "Spinning attack that may\n"
+    "poison the foe.");
 
 static const u8 sCombatTorqueDescription[] = _(
-    "---");
+    "Spinning attack that may\n"
+    "cause paralysis.");
 
 static const u8 sMagicalTorqueDescription[] = _(
-    "---");
+    "Spinning attack that may\n"
+    "cause confusion.");
 
 static const u8 sPsybladeDescription[] = _(
     "This move's power increases\n"

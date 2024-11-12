@@ -1,5 +1,12 @@
 # CHANGELOG
 
+12/11/2024
+- Merged coconut's stuff, which includes expansion of abilities + moves for unique mon pool (whopping 127), and move descriptions stuff
+- Added OW sprite for gimmighoul roaming
+
+9/11/2024
+- Implemented faster berry growth in run. Thanks coconut!
+
 6/11/2024
 - Added the option to rename the hub
 

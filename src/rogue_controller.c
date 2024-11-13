@@ -3827,6 +3827,7 @@ u16 Rogue_PostRunRewardLvls()
 u16 Rogue_PostRunRewardMoney()
 {
     u32 amount = 0;
+    u16 total = 0;
 
     if(gRogueRun.enteredRoomCounter > 1)
     {
@@ -3843,27 +3844,31 @@ u16 Rogue_PostRunRewardMoney()
         {
             switch (Rogue_GetDifficultyRewardLevel())
             {
-            case DIFFICULTY_LEVEL_EASY:
-                amount = i * 200;
-                break;
+                case DIFFICULTY_LEVEL_EASY:
+                    amount = 200;
+                    break;
 
-            case DIFFICULTY_LEVEL_AVERAGE:
-                amount = i * 250;
-                break;
+                case DIFFICULTY_LEVEL_AVERAGE:
+                    amount = 250;
+                    break;
 
-            case DIFFICULTY_LEVEL_HARD:
-                amount = i * 300;
-                break;
-            
-            case DIFFICULTY_LEVEL_BRUTAL:
-                amount = i * 350;
-                break;
+                case DIFFICULTY_LEVEL_HARD:
+                    amount = 300;
+                    break;
+                
+                case DIFFICULTY_LEVEL_BRUTAL:
+                    amount = 350;
+                    break;
             }
         }
+        if (gSaveBlock2Ptr->optionsDifficultyRewardMode == OPTIONS_DIFFICULTY_REWARD_MODE_MULTIPLIER)
+            total = amount;
+        else
+            total = (7 * gRogueRun.victoryLapTotalWins * amount) / 6 + amount * (gRogueRun.enteredRoomCounter - 1);
     }
 
-    AddMoney(&gSaveBlock1Ptr->money, amount);
-    return amount;
+    AddMoney(&gSaveBlock1Ptr->money, total);
+    return total;
 }
 
 static struct Pokemon* GetLabMon(u8 slot)

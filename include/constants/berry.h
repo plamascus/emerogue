@@ -112,7 +112,7 @@
 #define BERRY_TREE_DAYCARE_LAST         BERRY_TREE_DAYCARE_20
 #define BERRY_TREE_DAYCARE_COUNT        (BERRY_TREE_DAYCARE_LAST - BERRY_TREE_DAYCARE_FIRST + 1)
 
-#define BERRY_TREE_DAYCARE_MPLR         8 // how many times faster in-run berries will grow
+#define BERRY_TREE_DAYCARE_MPLR         4 // how many times faster in-run berries will grow
 
 // Remainder are unused
 

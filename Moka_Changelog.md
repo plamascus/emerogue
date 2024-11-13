@@ -3,6 +3,11 @@
 12/11/2024
 - Merged coconut's stuff, which includes expansion of abilities + moves for unique mon pool (whopping 127), and move descriptions stuff
 - Added OW sprite for gimmighoul roaming
+- Merged some of eevee's stuff again, including gimmighoul evo, increased victory lap reward
+- Updated the berry rate growth for balance purpose
+- Merged kleen's make it rain fix
+- Updated game version! Finally!!! (Do tell me if I fuck up something)
+- Merged booster energy from rhh
 
 9/11/2024
 - Implemented faster berry growth in run. Thanks coconut!

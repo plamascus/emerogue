@@ -277,6 +277,7 @@ extern const u8 gText_MenuRetire[];
 extern const u8 gText_MenuRest[];
 extern const u8 gText_MenuQuickSave[];
 extern const u8 gText_MenuRetireRun[];
+extern const u8 gText_MenuSoftlockTP[];
 extern const u8 gText_MenuQuests[];
 extern const u8 gText_MenuDecorate[];
 extern const u8 gText_Floor1[];

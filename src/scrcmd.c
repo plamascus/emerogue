@@ -2197,6 +2197,20 @@ bool8 ScrCmd_warprespawn(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_warptospawn(struct ScriptContext *ctx)
+{
+    u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+    u8 mapNum = gSaveBlock1Ptr->location.mapNum;
+    u8 warpId = WARP_ID_MAP_START;
+    u16 x = VarGet(ScriptReadHalfword(ctx)); //Not important
+    u16 y = VarGet(ScriptReadHalfword(ctx));
+
+    SetWarpDestination(mapGroup, mapNum, warpId, x, y);
+    DoWarp();
+    ResetInitialPlayerAvatarState();
+    return TRUE;
+}
+
 bool8 ScrCmd_checkplayergender(struct ScriptContext *ctx)
 {
     gSpecialVar_Result = gSaveBlock2Ptr->playerGender;

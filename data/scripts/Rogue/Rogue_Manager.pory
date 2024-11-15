@@ -256,6 +256,20 @@ script Rogue_RetireFromRun
     releaseall
 }
 
+script Rogue_TPtoSpawn
+{
+    lockall
+    msgbox(format("Are you sure you'd like to teleport to this route's spawnpoint?"), MSGBOX_YESNO)
+
+    if(var(VAR_RESULT) == YES)
+    {
+        warptospawn
+        waitstate
+    }
+
+    releaseall
+}
+
 script Rogue_ReturnToHub
 {
     warprespawn

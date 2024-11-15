@@ -50,6 +50,7 @@
 
 #include "constants/rogue.h"
 #include "rogue.h"
+#include "rogue_adventurepaths.h"
 #include "rogue_controller.h"
 #include "rogue_charms.h"
 #include "rogue_hub.h"
@@ -72,6 +73,7 @@ enum
     MENU_ACTION_EXIT,
     MENU_ACTION_RETIRE_SAFARI,
     MENU_ACTION_RETIRE_ADVENTURE,
+    MENU_ACTION_SOFTLOCK_TP,
     MENU_ACTION_PLAYER_LINK,
     MENU_ACTION_REST_FRONTIER,
     MENU_ACTION_RETIRE_FRONTIER,
@@ -121,6 +123,7 @@ static bool8 StartMenuSaveCallback(void);
 static bool8 StartMenuOptionCallback(void);
 static bool8 StartMenuExitCallback(void);
 static bool8 StartMenuSafariZoneRetireCallback(void);
+static bool8 StartMenuSoftlockTPCallback(void);
 static bool8 StartMenuLinkModePlayerNameCallback(void);
 static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
@@ -227,6 +230,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_EXIT]            = {gText_MenuExit,        {.u8_void = StartMenuExitCallback}},
     [MENU_ACTION_RETIRE_SAFARI]   = {gText_MenuRetire,      {.u8_void = StartMenuSafariZoneRetireCallback}},
     [MENU_ACTION_RETIRE_ADVENTURE]= {gText_MenuRetireRun,   {.u8_void = StartMenuSafariZoneRetireCallback}},
+    [MENU_ACTION_SOFTLOCK_TP]     = {gText_MenuSoftlockTP,  {.u8_void = StartMenuSoftlockTPCallback}}, 
     [MENU_ACTION_PLAYER_LINK]     = {gText_MenuPlayer,      {.u8_void = StartMenuLinkModePlayerNameCallback}},
     [MENU_ACTION_REST_FRONTIER]   = {gText_MenuRest,        {.u8_void = StartMenuSaveCallback}},
     [MENU_ACTION_RETIRE_FRONTIER] = {gText_MenuRetire,      {.u8_void = StartMenuBattlePyramidRetireCallback}},
@@ -448,6 +452,12 @@ static void BuildRogueRunStartMenu(void)
     }
 
     AddStartMenuAction(MENU_ACTION_OPTION);
+
+    if (gRogueAdvPath.currentRoomType == ADVPATH_ROOM_ROUTE) //So it'll only show up in routes
+    {
+        AddStartMenuAction(MENU_ACTION_SOFTLOCK_TP);
+    }
+
     AddStartMenuAction(MENU_ACTION_RETIRE_ADVENTURE);
     //AddStartMenuAction(MENU_ACTION_EXIT);
 }
@@ -806,6 +816,7 @@ static bool8 HandleStartMenuInput(void)
                 && gMenuCallback != StartMenuExitCallback
                 && gMenuCallback != StartMenuDebugCallback
                 && gMenuCallback != StartMenuSafariZoneRetireCallback
+                && gMenuCallback != StartMenuSoftlockTPCallback
                 && gMenuCallback != StartMenuBattlePyramidRetireCallback
                 && gMenuCallback != StartMenuQuickSaveCallback)
             {
@@ -992,6 +1003,7 @@ static bool8 StartMenuExitCallback(void)
 
 extern const u8 Rogue_RetireFromRun[];
 extern const u8 Rogue_QuickSaveRun[];
+extern const u8 Rogue_TPtoSpawn[];
 
 static bool8 StartMenuSafariZoneRetireCallback(void)
 {
@@ -1006,6 +1018,16 @@ static bool8 StartMenuSafariZoneRetireCallback(void)
     {
         SafariZoneRetirePrompt();
     }
+
+    return TRUE;
+}
+
+static bool8 StartMenuSoftlockTPCallback(void)
+{
+    RemoveExtraStartMenuWindows();
+    HideStartMenu();
+
+    ScriptContext_SetupScript(Rogue_TPtoSpawn);
 
     return TRUE;
 }

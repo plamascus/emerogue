@@ -3314,8 +3314,8 @@ static const u8 sTachyonCutterDescription[] = _(
     "the target. Strikes twice.");
 
 static const u8 sDragonCheerDescription[] = _(
-    "Increases allies' critical hit\n"
-    "ration, especially if Dragons.");
+    "Ups allies' critical hit\n"
+    "ratio, especially Dragons.");
 
 static const u8 sAlluringVoiceDescription[] = _(
     "Confuses the target if their\n"

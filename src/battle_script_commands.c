@@ -6014,19 +6014,17 @@ static void Cmd_moveend(void)
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
             && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
             && gMultiHitCounter
-            && !(gMovesInfo[gCurrentMove].effect == EFFECT_PRESENT && gBattleStruct->presentBasePower == 0)) // Silly edge case
+            && !(gBattleMoves[gCurrentMove].effect == EFFECT_PRESENT && gBattleStruct->presentBasePower == 0)) // Silly edge case
             {
                 gMultiHitCounter--;
-                if (!IsBattleAlive(gBattlerTarget) && gMovesInfo[gCurrentMove].effect != EFFECT_DRAGON_DARTS)
-                    gMultiHitCounter = 0;
 
                 gBattleScripting.multihitString[4]++;
-                if (gMultiHitCounter == 0)
+                if (gMultiHitCounter == 0 || !gBattleMons[gBattlerTarget].hp)
                 {
                     BattleScriptPushCursor();
-                    if (gMovesInfo[gCurrentMove].argument == MOVE_EFFECT_SCALE_SHOT && !NoAliveMonsForEitherParty())
+                    if (gBattleMoves[gCurrentMove].argument == MOVE_EFFECT_SCALE_SHOT && !NoAliveMonsForEitherParty())
                     {
-                        gBattlescriptCurrInstr = BattleScript_ScaleShot;
+                        gBattlescriptCurrInstr = BattleScript_DefDownSpeedUp;
                     }
                     else
                         gBattlescriptCurrInstr = BattleScript_MultiHitPrintStrings;

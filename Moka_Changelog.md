@@ -1,5 +1,11 @@
 # CHANGELOG
 
+16/11/2024
+- Merged in eevee's birch lab modification. Now only legendaries has chance to be cursed
+- Added "restart" button in case of softlock. Only appears in routes. It doesn't actually restart your game, it just teleports you to the route's spawnpoint lol
+- Removed chilly reception, electro shot, and flying press added mountain gale, body press, and cotton guard in unique mon movepool
+- Fixed some grammar issues
+
 12/11/2024
 - Merged coconut's stuff, which includes expansion of abilities + moves for unique mon pool (whopping 127), and move descriptions stuff
 - Added OW sprite for gimmighoul roaming

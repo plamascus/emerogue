@@ -8,7 +8,7 @@
 - It's, well, a map designed so that you can just press up to progress, lol. It's really nothing special, as I made it so that I can rush the game as quickly as possible during debugging. Added it in anyway so I can have a somewhat quicker run. It's generated once you enter the run/earn a badge, so keep that in mind
 
 ## What's the difference between ridemon control vanilla and mocha?
-A: Vanilla is the same control as you probably used to. Mocha changed the fly button to R button, and B for quick dismount.
+- Vanilla is the same control as you probably used to. Mocha changed the fly button to R button, and B for quick dismount.
 
 ## Why is it only for EX :(
 - I don't play classic version, and honestly it's a hassle to compile two versions

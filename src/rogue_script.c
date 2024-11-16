@@ -783,6 +783,24 @@ void Rogue_BufferLabMonName(void)
     Rogue_CopyLabEncounterMonNickname(index, gStringVar1);
 }
 
+void IsLegendarySpecies(void)
+{
+    u16 species = gSpecialVar_0x8001;
+    gSpecialVar_0x8003 = RoguePokedex_IsSpeciesLegendary(species);
+}
+
+u8 IsCursed(void)
+{
+    u8 RogueDiff = Rogue_GetCurrentDifficulty();
+    u8 buffer[6];
+
+    if (RogueDiff >= 12 || (RogueDiff * 8 >= Random() % 100))
+        return TRUE;
+    else
+        return TRUE;
+}
+    
+
 void Rogue_GiveLabMon(void)
 {
     u16 index = gSpecialVar_0x8002;

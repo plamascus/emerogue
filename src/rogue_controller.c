@@ -4501,7 +4501,7 @@ static void EndRogueRun(void)
     RogueHub_UpdateWanderMons();
 }
 
-static u16 SelectLegendarySpecies(u8 legendId)
+u16 SelectLegendarySpecies(u8 legendId)
 {
     u16 i;
     u16 species;

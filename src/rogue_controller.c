@@ -3827,7 +3827,7 @@ u16 Rogue_PostRunRewardLvls()
 u16 Rogue_PostRunRewardMoney()
 {
     u32 amount = 0;
-    u16 total = 0;
+    u32 total = 0;
 
     if(gRogueRun.enteredRoomCounter > 1)
     {
@@ -6584,6 +6584,8 @@ void Rogue_Battle_EndTrainerBattle(u16 trainerNum)
             Rogue_PushPopup_VictoryLapProgress(Rogue_GetTrainerTypeAssignment(trainerNum), gRogueRun.victoryLapTotalWins);
 
             VarSet(VAR_TEMP_1, gRogueRun.victoryLapTotalWins);
+            if(IsTerastallizeEnabled())
+                FlagSet(FLAG_ROGUE_TERA_ORB_CHARGED);
 
             if(gRogueRun.victoryLapTotalWins == 5)
             {

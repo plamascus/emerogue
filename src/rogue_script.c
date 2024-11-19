@@ -797,7 +797,7 @@ u8 IsCursed(void)
     if (RogueDiff >= 12 || (RogueDiff * 8 >= Random() % 100))
         return TRUE;
     else
-        return TRUE;
+        return FALSE;
 }
     
 

@@ -1,5 +1,11 @@
 # CHANGELOG
 
+20/11/2024
+- Fixed a lil mistake I left in during debugging. Now taking legendary mon from Birch's lab isn't guaranteed to be cursed unless you're deep into the run
+- Tera orb will now recharge in victory lap, once per fight
+- It is now possible to skip the random starter bag. Enabled via setting
+- Fixed scale shot, it should now change the stats after the opponent is ko'd
+
 16/11/2024
 - Merged in eevee's birch lab modification. Now only legendaries has chance to be cursed
 - Added "restart" button in case of softlock. Only appears in routes. It doesn't actually restart your game, it just teleports you to the route's spawnpoint lol

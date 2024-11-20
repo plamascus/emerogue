@@ -406,7 +406,7 @@ script Rogue_StartAdventureInternal
 
         setvar(VAR_STARTER_SWAP_SPECIES, SPECIES_NONE)
 
-        if(!flag(FLAG_HIDE_STARTER_BAG))
+        if(!flag(FLAG_HIDE_STARTER_BAG) && !flag(FLAG_IGNORE_STARTERBAG))
         {
             applymovement(OBJ_EVENT_ADVENTURE_NURSE, Rogue_Adventure_WalkNurse)
             applymovement(OBJ_EVENT_ID_PLAYER, Rogue_Adventure_WalkPlayerStarter)

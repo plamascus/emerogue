@@ -18,6 +18,9 @@
 #include "string_util.h"
 #include "gba/m4a_internal.h"
 #include "constants/rgb.h"
+//For the ignorebag, rogue_script.o error wont let me do shit
+#include "event_data.h"
+#include "constants/flags.h" 
 
 #define QUICK_JUMP_AMOUNT 4
 
@@ -58,6 +61,7 @@ enum
     MENUITEM_RIDEMON_CONTROL,
     MENUITEM_SHOW_MONEY,
     MENUITEM_QUICK_ROUTE,
+    MENUITEM_IGNORE_BAG,
     MENUITEM_CANCEL,
 };
 
@@ -129,6 +133,8 @@ static u8 ShowMoney_ProcessInput(u8 menuOffset, u8 selection);
 static void ShowMoney_DrawChoices(u8 menuOffset, u8 selection);
 static u8 QuickRoute_ProcessInput(u8 menuOffset, u8 selection);
 static void QuickRoute_DrawChoices(u8 menuOffset, u8 selection);
+static u8 IgnoreBag_ProcessInput(u8 menuOffset, u8 selection);
+static void IgnoreBag_DrawChoices(u8 menuOffset, u8 selection);
 static u8 Empty_ProcessInput(u8 menuOffset, u8 selection);
 static void Empty_DrawChoices(u8 menuOffset, u8 selection);
 
@@ -323,6 +329,12 @@ static const struct MenuEntry sOptionMenuItems[] =
         .processInput = QuickRoute_ProcessInput,
         .drawChoices = QuickRoute_DrawChoices,
     },
+    [MENUITEM_IGNORE_BAG] =
+    {
+        .itemName = gText_IgnoreBag,
+        .processInput = IgnoreBag_ProcessInput,
+        .drawChoices = IgnoreBag_DrawChoices,
+    },
     [MENUITEM_CANCEL] = 
     {
         .itemName = gText_OptionMenuCancel,
@@ -404,6 +416,7 @@ static const struct MenuEntries sOptionMenuEntries[SUBMENUITEM_COUNT] =
             MENUITEM_RIDEMON_CONTROL,
             MENUITEM_SHOW_MONEY,
             MENUITEM_QUICK_ROUTE,
+            MENUITEM_IGNORE_BAG,
             MENUITEM_CANCEL
         }
 
@@ -1211,6 +1224,37 @@ static void QuickRoute_DrawChoices(u8 menuOffset, u8 selection)
 }
 
 
+static u8 IgnoreBag_ProcessInput(u8 menuOffset, u8 selection)
+{
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    {
+        selection ^= 1;
+        sArrowPressed = TRUE;
+        //we set the flags here
+        if (selection == 1)
+        {
+            FlagSet(FLAG_IGNORE_STARTERBAG);
+        }
+        else
+        {
+            FlagClear(FLAG_IGNORE_STARTERBAG);
+        }
+    }
+
+    return selection;
+}
+
+static void IgnoreBag_DrawChoices(u8 menuOffset, u8 selection)
+{
+    u8 const* options[] = 
+    {
+        [OPTIONS_IGNOREBAG_OFF] = gText_QuickRoute_OFF,
+        [OPTIONS_IGNOREBAG_ON] = gText_QuickRoute_ON,
+    };
+    DrawChoiceSelection(menuOffset, selection, options, ARRAY_COUNT(options));
+}
+
+
 static u8 ButtonMode_ProcessInput(u8 menuOffset, u8 selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
@@ -1359,6 +1403,9 @@ static u8 GetMenuItemValue(u8 menuItem)
 
     case MENUITEM_QUICK_ROUTE:
         return gSaveBlock2Ptr->optionsQuickRoute;
+
+    case MENUITEM_IGNORE_BAG:
+        return gSaveBlock2Ptr->optionsIgnoreBag;
     }
 
     return 0;
@@ -1462,6 +1509,9 @@ static void SetMenuItemValue(u8 menuItem, u8 value)
     
     case MENUITEM_QUICK_ROUTE:
         gSaveBlock2Ptr->optionsQuickRoute = value;
+
+    case MENUITEM_IGNORE_BAG:
+        gSaveBlock2Ptr->optionsIgnoreBag = value;
     }
 }
 

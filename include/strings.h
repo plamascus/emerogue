@@ -381,6 +381,9 @@ extern const u8 gText_ShowMoney_ON[];
 extern const u8 gText_QuickRoute[];
 extern const u8 gText_QuickRoute_OFF[];
 extern const u8 gText_QuickRoute_ON[];
+extern const u8 gText_IgnoreBag[];
+extern const u8 gText_IgnoreBag_OFF[];
+extern const u8 gText_IgnoreBag_ON[];
 
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];

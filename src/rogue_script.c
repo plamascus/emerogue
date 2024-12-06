@@ -2416,3 +2416,12 @@ void PotionBrewInput()
 {
     StartBrewInput();
 }
+
+void Mocha_SkipBagCheck()
+{
+    gSpecialVar_Result = FALSE;
+    if (gSaveBlock2Ptr->optionsIgnoreBag == OPTIONS_IGNOREBAG_ON)
+    {
+        gSpecialVar_Result = TRUE;
+    }
+}

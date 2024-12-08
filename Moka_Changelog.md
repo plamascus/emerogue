@@ -3,6 +3,7 @@
 9/12/2024
 - Adjusted the potion brewing text position to fit 3 digits
 - Fixed potion cauldron not correctly reducing the berry amount during large batches of brewing
+- Fixed held item not getting refunded if release mon on fainted toggle is disabled
 
 8/12/2024
 - Fixed QoL settings not sticking (For real)

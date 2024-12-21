@@ -203,14 +203,14 @@ script Rogue_Area_RideTraining_OfferNextUpgrade
 
     if(var(VAR_RESULT) == FALSE)
     {
-        // 5000
+        // 5
         call(Rogue_Area_RideTraining_GiveBasicWhistle)
         return
     }
 
     if (!flag(FLAG_SYS_RIDING_LEDGE_JUMP))
     {
-        // 10000
+        // 10
         call(Rogue_Area_RideTraining_TeachLedgeJump)
         return
     }
@@ -218,49 +218,49 @@ script Rogue_Area_RideTraining_OfferNextUpgrade
     checkitem(ITEM_GOLD_RIDING_WHISTLE)
     if(var(VAR_RESULT) == FALSE)
     {
-        // 15000
+        // 15
         call(Rogue_Area_RideTraining_GiveGoldWhistle)
         return
     }
 
     if (!flag(FLAG_SYS_RIDING_SURF))
     {
-        // 20000
+        // 20
         call(Rogue_Area_RideTraining_TeachSurf)
         return
     }
 
     if(!flag(FLAG_SYS_RIDING_ACCESS_DAYCARE))
     {
-        // 25000
+        // 25
         call(Rogue_Area_RideTraining_CallDaycare)
         return
     }
 
     if (!flag(FLAG_SYS_RIDING_FLY))
     {
-        // 30000
+        // 30
         call(Rogue_Area_RideTraining_TeachFly)
         return
     }
 
     if (!flag(FLAG_SYS_RIDING_FLY_2_CHARGES))
     {
-        // 50000
+        // 50
         call(Rogue_Area_RideTraining_FlyCharge2)
         return
     }
 
     if (!flag(FLAG_SYS_RIDING_FLY_3_CHARGES))
     {
-        // 100000
+        // 100
         call(Rogue_Area_RideTraining_FlyCharge3)
         return
     }
 
     if (!flag(FLAG_SYS_RIDING_FLY_INFINITE_CHARGES))
     {
-        // 500000
+        // 500
         call(Rogue_Area_RideTraining_FlyChargeInfinite)
         return
     }
@@ -290,14 +290,14 @@ script Rogue_Area_RideTraining_GiveBasicWhistle
 {
     showmoneybox(0, 0)
 
-    msgbox(format("I could teach you how to ride your Pokémon for ¥5000?"), MSGBOX_YESNO)
+    msgbox(format("I could teach you how to ride your Pokémon for ¥5?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        checkconstantmoney(5000)
+        checkconstantmoney(5)
         if(var(VAR_RESULT) == YES)
         {
-            removeconstantmoney(5000)
+            removeconstantmoney(5)
             updatemoneybox
 
             playse(SE_SHOP)
@@ -340,14 +340,14 @@ script Rogue_Area_RideTraining_TeachLedgeJump
 {
     showmoneybox(0, 0)
 
-    msgbox(format("I could teach you how to climb back up ledges for ¥10000?"), MSGBOX_YESNO)
+    msgbox(format("I could teach you how to climb back up ledges for ¥10?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        checkconstantmoney(10000)
+        checkconstantmoney(10)
         if(var(VAR_RESULT) == YES)
         {
-            removeconstantmoney(10000)
+            removeconstantmoney(10)
             updatemoneybox
 
             playse(SE_SHOP)
@@ -382,14 +382,14 @@ script Rogue_Area_RideTraining_TeachSurf
 {
     showmoneybox(0, 0)
 
-    msgbox(format("I could teach you how to swim for ¥20000?"), MSGBOX_YESNO)
+    msgbox(format("I could teach you how to swim for ¥20?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        checkconstantmoney(20000)
+        checkconstantmoney(20)
         if(var(VAR_RESULT) == YES)
         {
-            removeconstantmoney(20000)
+            removeconstantmoney(20)
             updatemoneybox
 
             playse(SE_SHOP)
@@ -424,14 +424,14 @@ script Rogue_Area_RideTraining_TeachFly
 {
     showmoneybox(0, 0)
 
-    msgbox(format("I could teach you how to fly for ¥30000?"), MSGBOX_YESNO)
+    msgbox(format("I could teach you how to fly for ¥30?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        checkconstantmoney(30000)
+        checkconstantmoney(30)
         if(var(VAR_RESULT) == YES)
         {
-            removeconstantmoney(30000)
+            removeconstantmoney(30)
             updatemoneybox
 
             playse(SE_SHOP)
@@ -466,14 +466,14 @@ script Rogue_Area_RideTraining_FlyCharge2
 {
     showmoneybox(0, 0)
 
-    msgbox(format("I could teach you how to fly 2 times before exhausting your {PKMN} for ¥50000?"), MSGBOX_YESNO)
+    msgbox(format("I could teach you how to fly 2 times before exhausting your {PKMN} for ¥50?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        checkconstantmoney(50000)
+        checkconstantmoney(50)
         if(var(VAR_RESULT) == YES)
         {
-            removeconstantmoney(50000)
+            removeconstantmoney(50)
             updatemoneybox
 
             playse(SE_SHOP)
@@ -506,14 +506,14 @@ script Rogue_Area_RideTraining_FlyCharge3
 {
     showmoneybox(0, 0)
 
-    msgbox(format("I could teach you how to fly 3 times before exhausting your {PKMN} for ¥100000?"), MSGBOX_YESNO)
+    msgbox(format("I could teach you how to fly 3 times before exhausting your {PKMN} for ¥100?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        checkconstantmoney(100000)
+        checkconstantmoney(100)
         if(var(VAR_RESULT) == YES)
         {
-            removeconstantmoney(100000)
+            removeconstantmoney(100)
             updatemoneybox
 
             playse(SE_SHOP)
@@ -546,14 +546,14 @@ script Rogue_Area_RideTraining_FlyChargeInfinite
 {
     showmoneybox(0, 0)
 
-    msgbox(format("I could teach you how to fly an unlimited number of times before exhausting your {PKMN} for ¥500000?"), MSGBOX_YESNO)
+    msgbox(format("I could teach you how to fly an unlimited number of times before exhausting your {PKMN} for ¥500?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        checkconstantmoney(500000)
+        checkconstantmoney(500)
         if(var(VAR_RESULT) == YES)
         {
-            removeconstantmoney(500000)
+            removeconstantmoney(500)
             updatemoneybox
 
             playse(SE_SHOP)
@@ -586,14 +586,14 @@ script Rogue_Area_RideTraining_GiveGoldWhistle
 {
     showmoneybox(0, 0)
 
-    msgbox(format("I could give you a Gold Whistle for ¥15000?"), MSGBOX_YESNO)
+    msgbox(format("I could give you a Gold Whistle for ¥15?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        checkconstantmoney(15000)
+        checkconstantmoney(15)
         if(var(VAR_RESULT) == YES)
         {
-            removeconstantmoney(15000)
+            removeconstantmoney(15)
             updatemoneybox
 
             playse(SE_SHOP)
@@ -655,14 +655,14 @@ script Rogue_Area_RideTraining_CallDaycare
 {
     showmoneybox(0, 0)
 
-    msgbox(format("I could teach you how to call Pokémon from the Day Care for ¥25000?"), MSGBOX_YESNO)
+    msgbox(format("I could teach you how to call Pokémon from the Day Care for ¥25?"), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES)
     {
-        checkconstantmoney(25000)
+        checkconstantmoney(25)
         if(var(VAR_RESULT) == YES)
         {
-            removeconstantmoney(25000)
+            removeconstantmoney(25)
             updatemoneybox
 
             playse(SE_SHOP)

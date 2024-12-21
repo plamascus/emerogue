@@ -91,6 +91,11 @@ script Rogue_Area_RideTraining_FindItemSurf
     finditem(ITEM_LEFTOVERS, 1)
 }
 
+script Rogue_Area_RideTraining_FindRareCandies
+{
+    finditem(ITEM_RARE_CANDY, 40)
+}
+
 script Rogue_Area_RideTraining_FindItemFly
 {
     finditem(ITEM_ESCAPE_ROPE, 1)

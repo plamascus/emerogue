@@ -251,7 +251,7 @@ script Rogue_Area_Market_TalkPokeblockHelper
 {
     lock
     faceplayer
-    msgbox(format("You look like a Trainer to me!\pI'm something of a {POKEBLOCK} Expert myself.\pI can help you learn which Berries make what kinds of {POKEBLOCK}, if you'd like."))
+    msgbox(format("You look like a Trainer to me!\pI'm something of a {POKEBLOCK} Expert myself.\pI can help you learn which Berries make what kinds of {POKEBLOCK}, if you'd like.\pI'll even give you 99x of that Block!"))
 
     setvar(VAR_RESULT, YES)
 
@@ -274,6 +274,8 @@ script Rogue_Area_Market_TalkPokeblockHelper
             message(format("These are the Berries which produce {STR_VAR_1}."))
             waitmessage
             enddynamicmultichoice(19, 2, 5, TRUE)
+            giveitem(VAR_0x8004, 99)
+
             
             setvar(VAR_RESULT, YES)
         }

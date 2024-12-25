@@ -484,6 +484,7 @@ If it has built successfully you will have the output file **pokeemerald.gba** i
 <details>
 <summary>Note for Windows...</summary>
 > If you switched terminals since the last build (e.g. from msys2 to WSL1), you must run `make clean-tools` once before any subsequent `make` commands.
+> Note: You may have to run `init_deps.sh` and manually unzip the `poryscript` and `ups` folders.
 </details>
 
 # Building guidance
